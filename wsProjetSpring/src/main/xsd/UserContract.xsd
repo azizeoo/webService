@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.norsys.fr/formation/ws/sq/schema/beans"
+	targetNamespace="http://www.norsys.fr/formation/ws/sq/schema/beans"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="sayHelloRequest">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sayHelloResponse">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="UserGen">
+		<xsd:complexType>
+			<xsd:attribute name="id" type="xsd:integer"/>
+			<xsd:attribute name="name" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="getUsersByNameRequest">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="getUsersByNameResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="UserGen" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
